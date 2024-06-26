@@ -1,0 +1,195 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #004080; /* Navy Blue */
+  color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px; /* Make links rounded */
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #002d66;
+}
+
+/* Page Styles */
+h2 {
+  color: #004080; /* Navy Blue */
+  margin-bottom: 20px;
+}
+
+.page-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input, form select, form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px; /* Increase border-radius for rounded corners */
+  font-size: 16px;
+  width: 100%; /* Make inputs full width */
+  max-width: 400px; /* Limit the width of inputs */
+}
+
+form button {
+  background-color: #007bff; /* Bright Blue */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px; /* Increase border-radius for rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 150px; /* Fixed width for the submit button */
+  align-self: center; /* Center the button */
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Button Styles */
+button {
+  background-color: #007bff; /* Bright Blue */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px; /* Increase border-radius for rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 150px; /* Fixed width for other buttons */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+/*register.css*/
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-input input {
+  width: calc(100% - 32px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px; /* Ensure this value is sufficient to visibly round the corners */
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #007bff;
+  font-size: 18px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
