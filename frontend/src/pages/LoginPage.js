@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import './Login.css'; // Import your Login-specific CSS file
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons for password visibility toggle
+import './Login.css'; // Assuming you want to style your form
 
-const Login = () => {
+const LoginPage = () => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
   });
-  const [showPassword, setShowPassword] = useState(false);
+  const [loginMessage, setLoginMessage] = useState('');
 
   const { username, password } = formData;
 
@@ -15,7 +14,7 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await fetch('http://localhost:5000/api/login', {
@@ -28,43 +27,34 @@ const Login = () => {
 
       const data = await response.json();
       if (response.ok) {
-        console.log(data.message);
-        // Handle successful login, e.g., redirect to dashboard
+        // Assuming your backend returns a token upon successful login
+        localStorage.setItem('token', data.token); // Store token in localStorage or secure storage
+        // Redirect or navigate to another page upon successful login
+        window.location.href = '/dashboard'; // Redirect to dashboard or main app page
       } else {
-        console.error(data.message);
-        // Handle login error, e.g., display error message
+        setLoginMessage(data.message || 'Login failed. Please check your credentials.'); // Display error message if login fails
       }
     } catch (error) {
       console.error('Error:', error);
-      // Handle unexpected errors
+      setLoginMessage('Login failed. Please try again.'); // Handle unexpected errors
     }
   };
 
   return (
-    <form className="form-container" onSubmit={onSubmit}>
+    <form className="form-container" onSubmit={handleSubmit}>
       <h2>Login</h2>
+      {loginMessage && <p className="login-message">{loginMessage}</p>}
       <div className="form-group">
         <label>Username</label>
         <input type="text" name="username" value={username} onChange={onChange} required />
       </div>
       <div className="form-group">
         <label>Password</label>
-        <div className="password-input">
-          <input
-            type={showPassword ? "text" : "password"}
-            name="password"
-            value={password}
-            onChange={onChange}
-            required
-          />
-          <span className="toggle-password" onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
-          </span>
-        </div>
+        <input type="password" name="password" value={password} onChange={onChange} required />
       </div>
       <button type="submit">Login</button>
     </form>
   );
 };
 
-export default Login;
+export default LoginPage;

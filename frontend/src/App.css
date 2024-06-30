@@ -193,3 +193,11 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+.registration-message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #dff0d8; /* Bootstrap's success alert color */
+  border: 1px solid #d6e9c6; /* Bootstrap's success alert border color */
+  color: #3c763d; /* Bootstrap's success alert text color */
+}

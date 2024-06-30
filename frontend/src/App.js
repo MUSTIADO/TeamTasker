@@ -6,8 +6,11 @@ import UsersPage from './pages/UsersPage';
 import ProjectsPage from './pages/ProjectsPage';
 import TasksPage from './pages/TasksPage';
 import TaskAssignmentsPage from './pages/TaskAssignmentsPage';
-import Register from './pages/RegisterPage';
-import Login from './pages/Login';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
+import UserProfilePage from './pages/UserProfilePage';
+import DashboardPage from './pages/DashboardPage';
+
 import './App.css';
 
 function App() {
@@ -16,13 +19,15 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="Home" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Dashboard" element={<DashboardPage />} />
           <Route path="/users" element={<UsersPage />} />
+          <Route path="/userprofile" element={<UserProfilePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/tasks" element={<TasksPage />} />
           <Route path="/task_assignments" element={<TaskAssignmentsPage />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </Router>
